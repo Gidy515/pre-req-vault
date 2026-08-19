@@ -1,5 +1,26 @@
-skip_local_validator = true
+#skip_local_validator = true
 
+#[toolchain]
+
+#[features]
+#resolution = true
+#skip-lint = false
+
+#[programs.localnet]
+#pre_req_vault = "DmKawJ8SSzcLUxzoH2LEoM53NjWUdbyzFz2C9RdvayC5"
+
+#[[test.validator.clone]]
+#address = "TRBZyQHB3m68FGeVsqTK39Wm4xejadjVhP5MAZaKWDM"
+
+#[provider]
+#cluster = "localnet"
+#wallet = "~/.config/solana/id.json"
+
+#[scripts]
+#test = "pnpm exec ts-mocha -p ./tsconfig.json -t 1000000 \"tests/**/*.ts\""
+#testsvm = "cargo test"
+
+#[hooks]
 [toolchain]
 
 [features]
@@ -7,11 +28,23 @@ resolution = true
 skip-lint = false
 
 [programs.localnet]
-pre_req_vault = "DBoobRVqT7PaAhq8obqo95723CHyWvcCLRUKvQ5wYWE4"
+pre_req_vault = "DmKawJ8SSzcLUxzoH2LEoM53NjWUdbyzFz2C9RdvayC5"
+
+[registry]
+url = "https://api.apr.dev"
 
 [provider]
 cluster = "devnet"
 wallet = "~/.config/solana/id.json"
+
+[test.validator]
+url = "https://api.devnet.solana.com"
+
+[[test.validator.clone]]
+address = "TRBZyQHB3m68FGeVsqTK39Wm4xejadjVhP5MAZaKWDM"
+
+[[test.validator.clone]]
+address = "2CGmiFPZBqe3Ly8Gxbt3gHomMXWR55QVLQ3vuG5rg65e"
 
 [scripts]
 test = "pnpm exec ts-mocha -p ./tsconfig.json -t 1000000 \"tests/**/*.ts\""
