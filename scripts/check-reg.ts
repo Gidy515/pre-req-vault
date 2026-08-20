@@ -8,7 +8,6 @@ const REGISTRATION_PROGRAM_ID = new PublicKey(
   "TRBZyQHB3m68FGeVsqTK39Wm4xejadjVhP5MAZaKWDM"
 );
 const RPC_URL = "https://api.devnet.solana.com";
-// Path to the registration IDL you already have in your repo (idls/registration.json)
 //const IDL_PATH = "./idls/registration.json";
 
 const IDL_PATH = path.join(__dirname, "../idls/registration.json");
